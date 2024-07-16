@@ -2,7 +2,8 @@
 
 ## **Description**
 
-Reduce the visual space taken up by the fire overlay!
+Reduce the visual space taken up by the fire overlay!  
+Perfect for PvP or everyday gameplay!
 
 The only pack to officially support [Soul Fire'd](https://modrinth.com/mod/soul-fire-d) and all the other mods using it!
 
