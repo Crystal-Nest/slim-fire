@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/template_fire_floor",
+  "parent": "slim_fire:block/template_slim_fire_floor",
   "textures": {
-    "fire": "byg:block/boric_fire_2"
+    "fire": "byg:block/boric_fire_2",
+    "overlay": "byg:block/boric_fire_1"
   }
 }
