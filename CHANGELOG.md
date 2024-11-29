@@ -25,5 +25,5 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 [Unreleased]: https://github.com/crystal-nest/slim-fire
 [README]: https://github.com/crystal-nest/slim-fire#readme
 
-[v1.0.1]: https://github.com/crystal-nest/slim-fire/releases?q=1.0.1
-[v1.0.0]: https://github.com/crystal-nest/slim-fire/releases?q=1.0.0
+[v1.0.1]: https://github.com/crystal-nest/slim-fire/releases?q=v1.0.1
+[v1.0.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.0.0
