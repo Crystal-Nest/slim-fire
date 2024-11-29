@@ -11,6 +11,10 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 ## [v1.0.1] - 2024/09/12
 
+- Updated support for 1.21.1, 1.21.2, 1.21.3, and 1.21.4.
+
+## [v1.0.1] - 2024/09/12
+
 - 1.19.2 and lower only.
 - Fixed [#1](https://github.com/Crystal-Nest/slim-fire/issues/1), modded fire overlays not loaded correctly.
 
