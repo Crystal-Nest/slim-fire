@@ -19,7 +19,7 @@ The only pack to officially support [Soul Fire'd](https://modrinth.com/mod/soul-
 ## **License and right of use**
 
 Feel free to use this mod for any modpack or video, just be sure to give credit and possibly link [here](https://github.com/crystal-nest/slim-fire#readme).  
-This project is published under the [GNU General Public License v3.0](https://github.com/crystal-nest/slim-fire/blob/master/LICENSE).
+This project is published under the [Crystal Nest Community License v1](https://github.com/crystal-nest/slim-fire/blob/master/LICENSE).
 
 ## **Support us**
 
