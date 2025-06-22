@@ -11,6 +11,10 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 ## [v1.1.0] - 2025/04/11
 
+- Add support for 1.21.6.
+
+## [v1.1.0] - 2025/04/11
+
 - Added compatibility with Infernal Expansion, The Endergetic Expansion, and Caverns & Chasms when Soul Fire'd is installed.
 
 ## [v1.0.1] - 2024/11/29
