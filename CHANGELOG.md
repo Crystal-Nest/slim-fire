@@ -9,7 +9,7 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
-## [v1.2.0] - 2025/07/dd
+## [v1.2.0] - 2025/07/28
 
 - Added compatibility with Supplementaries when Soul Fire'd is installed.
 
