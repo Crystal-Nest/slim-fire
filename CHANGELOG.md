@@ -9,13 +9,17 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.2.0] - 2025/07/dd
+
+- Added compatibility with Supplementaries when Soul Fire'd is installed.
+
 ## [v1.1.0] - 2025/07/06
 
-- Add support for 1.21.7.
+- Added support for 1.21.7 and 1.21.8.
 
 ## [v1.1.0] - 2025/06/22
 
-- Add support for 1.21.6.
+- Added support for 1.21.6.
 
 ## [v1.1.0] - 2025/04/11
 
@@ -37,6 +41,7 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 [Unreleased]: https://github.com/crystal-nest/slim-fire
 [README]: https://github.com/crystal-nest/slim-fire#readme
 
+[v1.2.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.2.0
 [v1.1.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.1.0
 [v1.0.1]: https://github.com/crystal-nest/slim-fire/releases?q=v1.0.1
 [v1.0.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.0.0
