@@ -5,7 +5,7 @@
 Reduce the visual space taken up by the fire overlay!  
 Perfect for PvP or everyday gameplay!
 
-The only pack to officially support [Soul Fire'd](https://modrinth.com/mod/soul-fire-d) and all the other mods using it!
+The only pack to officially support [Prometheus](https://modrinth.com/mod/prometheus-api) and all the other mods using it!
 
 - **Vanilla**:  
   ![Slim Fire](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/slim-fire/imgs/fire-comparison.png)
