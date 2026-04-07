@@ -1,0 +1,103 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version"
+        required: true
+        type: string
+
+env:
+  MODRINTH_ID: slim-fire
+  CURSEFORGE_ID: 1063731
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Validate version
+        run: |
+          if [[ ! "${{ inputs.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-alpha|-beta)?$ ]]; then
+            echo "::error::Invalid version format '${{ inputs.version }}'. Expected format: {number}.{number}.{number}[-alpha|-beta]"
+            exit 1
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build pack
+        env:
+          PACK_FILE: §eSlim§0 §eFire§0.zip
+        run: |
+          cd src
+          zip -r "../$PACK_FILE" .
+          cd ..
+          zip "$PACK_FILE" LICENSE README.md
+
+      - name: Resolve metadata
+        id: metadata
+        run: |
+          VERSION="${{ inputs.version }}"
+
+          # Resolve supported Minecraft versions from pack format range.
+          GAME_VERSIONS=$(python3 << 'SCRIPT'
+          import json, urllib.request
+          pack = json.load(open("src/pack.mcmeta"))
+          min_fmt = pack["pack"]["min_format"]
+          max_fmt = pack["pack"]["max_format"]
+          data = json.loads(urllib.request.urlopen("https://raw.githubusercontent.com/misode/mcmeta/summary/versions/data.min.json").read())
+          versions = [v["id"] for v in data if v["stable"] and min_fmt <= v["resource_pack_version"] <= max_fmt]
+          print("\n".join(versions))
+          SCRIPT
+          )
+          echo "game-versions<<EOF" >> $GITHUB_OUTPUT
+          echo "$GAME_VERSIONS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+          # Build changelog link.
+          ESCAPED_VERSION=$(echo "$VERSION" | sed 's/\./\\./g')
+          DATE=$(grep -oP "## \[v${ESCAPED_VERSION}\] - \K[0-9/]+" CHANGELOG.md | head -1 | tr -d '/')
+          VERSION_NO_DOTS=$(echo "$VERSION" | tr -d '.')
+          echo "changelog=See [Changelog](https://github.com/Crystal-Nest/slim-fire/blob/main/CHANGELOG.md#v${VERSION_NO_DOTS}---${DATE})." >> $GITHUB_OUTPUT
+
+          # Determine version type.
+          if [[ "$VERSION" == *"-alpha"* ]]; then
+            echo "version-type=alpha" >> $GITHUB_OUTPUT
+          elif [[ "$VERSION" == *"-beta"* ]]; then
+            echo "version-type=beta" >> $GITHUB_OUTPUT
+          else
+            echo "version-type=release" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Publish
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: ${{ env.MODRINTH_ID }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          curseforge-id: ${{ env.CURSEFORGE_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          github-tag: v${{ inputs.version }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          name: Slim Fire v${{ inputs.version }}
+          version: ${{ inputs.version }}
+          version-type: ${{ steps.metadata.outputs.version-type }}
+          changelog: ${{ steps.metadata.outputs.changelog }}
+
+          files: §eSlim§0 §eFire§0.zip
+
+          game-versions: ${{ steps.metadata.outputs.game-versions }}
+          loaders: minecraft
+          game-version-filter: releases
+
+          dependencies: |
+            prometheus-api(optional){curseforge:prometheus}
+            soul-fire-d(optional)
+            copper-fire(optional)
+            supplementaries(optional)

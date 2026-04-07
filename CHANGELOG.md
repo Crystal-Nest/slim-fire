@@ -9,6 +9,11 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.4.0] - 2026/04/07
+
+- Added support for 26.1.x.
+- Removed useless backward compatibility with mods that do not support Minecraft `>1.21`.
+
 ## [v1.3.0] - 2025/12/31
 
 - Added support for 1.21.10 and 1.21.11.
@@ -46,6 +51,7 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 [Unreleased]: https://github.com/crystal-nest/slim-fire
 [README]: https://github.com/crystal-nest/slim-fire#readme
 
+[v1.4.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.4.0
 [v1.3.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.3.0
 [v1.2.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.2.0
 [v1.1.0]: https://github.com/crystal-nest/slim-fire/releases?q=v1.1.0
