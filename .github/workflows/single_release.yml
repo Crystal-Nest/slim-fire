@@ -71,7 +71,7 @@ jobs:
           zip -r "../$PACK_FILE" .
           cd ..
           zip "$PACK_FILE" LICENSE README.md
-          cp "$PACK_FILE" "Slim Fire.zip"
+          cp "$PACK_FILE" "SlimFire.zip"
 
       - name: Resolve metadata
         id: metadata
@@ -126,7 +126,7 @@ jobs:
           changelog: ${{ steps.metadata.outputs.changelog }}
 
           files: §eSlim§0 §eFire§0.zip
-          github-files: Slim Fire.zip
+          github-files: SlimFire.zip
 
           game-versions: ${{ steps.metadata.outputs.game-versions }}
           loaders: minecraft
