@@ -132,6 +132,8 @@ jobs:
           loaders: minecraft
           game-version-filter: releases
 
+          fail-mode: warn
+
           dependencies: |
             prometheus-api(optional){curseforge:prometheus}
             soul-fire-d(optional)
