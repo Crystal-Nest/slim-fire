@@ -11,17 +11,17 @@ on:
         description: "Publish to Modrinth"
         required: true
         type: boolean
-        default: true
+        default: false
       curseforge:
         description: "Publish to CurseForge"
         required: true
         type: boolean
-        default: true
+        default: false
       github:
         description: "Publish to GitHub"
         required: true
         type: boolean
-        default: true
+        default: false
   workflow_call:
     inputs:
       version:
